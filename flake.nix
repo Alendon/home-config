@@ -92,9 +92,9 @@
   outputs = { self, nixpkgs, nixpkgs-unstable, flake-utils, home-manager, ... }@inputs:
     let
       inherit (self) outputs;
-      gn = "dave";
-      gnsn = "daveconroy";
-      handle = "tiredofit";
+      gn = "alex";
+      gnsn = "alexp";
+      handle = "Alendon";
 
       pkgsForSystem = system: import nixpkgs {
         overlays = [
@@ -135,196 +135,13 @@
       {
         overlays = import ./overlays {inherit inputs;};
         homeConfigurations = {
-          "beef.${gn}" = HomeConfiguration {
+          "sisyphos" = HomeConfiguration {
             extraSpecialArgs = {
-              org = "toi";
-              role = "workstation";
-              hostname = "beef";
+              org = "generic";
+              role = "laptop";
+              hostname = "sisyphos";
               username = gn;
-              displays = 3;
-              display_center = "DP-2";
-              display_left = "DP-3";
-              display_right = "HDMI-A-1";
-              networkInterface = "wlp10s0";
-              inherit inputs outputs;
-            };
-          };
-
-          "butcher.${gn}" = HomeConfiguration {
-            extraSpecialArgs = {
-              org = "toi";
-              role = "server";
-              hostname = "butcher";
-              username = gn;
-              networkInterface = "enp6s18";
-              inherit inputs outputs;
-            };
-          };
-
-          "cog.${gn}" = HomeConfiguration {
-            extraSpecialArgs = {
-              org = "toi";
-              role = "server";
-              hostname = "cog" ;
-              username = gn;
-              networkInterface = "br0";
-              inherit inputs outputs;
-            };
-          };
-
-          "nakulaptop" = {
-            "${gn}" = HomeConfiguration {
-              extraSpecialArgs = {
-                org = "toi";
-                role = "workstation";
-                hostname = "nakulaptop";
-                username = gn;
-                displays = 2;
-                display_center = "HDMI-A-0";
-                display_right = "eDP";
-                networkInterface = "wlo1";
-                inherit inputs outputs;
-              };
-            };
-            "ireen" = HomeConfiguration {
-              extraSpecialArgs = {
-                org = "toi";
-                role = "workstation";
-                hostname = "nakulaptop";
-                username = "ireen";
-                displays = 1;
-                display_center = "eDP";
-                display_right = "HDMI-A-0";
-                networkInterface = "wlo1";
-                inherit inputs outputs;
-              };
-            };
-          };
-
-          "seed.${gn}" = HomeConfiguration {
-            extraSpecialArgs = {
-              org = "toi";
-              role = "server";
-              hostname = "seed" ;
-              username = gn;
-              networkInterface = "enp1s0f0";
-              inherit inputs outputs;
-            };
-          };
-
-          "tentacle.${gn}" = HomeConfiguration {
-            system = "aarch64-linux";
-            extraSpecialArgs = {
-              org = "toi";
-              role = "server";
-              hostname = "tentacle" ;
-              username = gn;
-              networkInterface = "enp6s18";
-              inherit inputs outputs;
-            };
-          };
-
-          "expedition.${gn}" = HomeConfiguration {
-            extraSpecialArgs = {
-              org = "toi";
-              role = "server";
-              hostname = "expedition" ;
-              username = gn;
-              networkInterface = "br0";
-              inherit inputs outputs;
-            };
-          };
-
-      ##
-          "bell.${gnsn}" = HomeConfiguration {
-            extraSpecialArgs = {
-              org = "sd";
-              role = "server";
-              hostname = "bell";
-              username = gnsn;
-              inherit inputs outputs;
-            };
-          };
-
-          "edge.${gnsn}" = HomeConfiguration {
-            extraSpecialArgs = {
-              org = "sd";
-              role = "server";
-              hostname = "edge";
-              username = gnsn;
-              inherit inputs outputs;
-            };
-          };
-
-          "einstein.${gnsn}" = HomeConfiguration {
-            system = "aarch64-linux";
-            extraSpecialArgs = {
-              org = "sd";
-              role = "server";
-              hostname = "einstein";
-              username = gnsn;
-              inherit inputs outputs;
-            };
-          };
-
-          "sd20.${gnsn}" = HomeConfiguration {
-            extraSpecialArgs = {
-              org = "sd";
-              role = "server";
-              hostname = "sd20";
-              username = gnsn;
-              inherit inputs outputs;
-            };
-          };
-
-          "sd91.${gnsn}" = HomeConfiguration {
-            extraSpecialArgs = {
-              org = "sd";
-              role = "server";
-              hostname = "sd91";
-              username = gnsn;
-              inherit inputs outputs;
-            };
-          };
-
-          "sd102.${gnsn}" = HomeConfiguration {
-            extraSpecialArgs = {
-              org = "sd";
-              role = "server";
-              hostname = "sd102";
-              username = gnsn;
-              inherit inputs outputs;
-            };
-          };
-
-          "sd111.${gnsn}" = HomeConfiguration {
-            extraSpecialArgs = {
-              org = "sd";
-              role = "server";
-              hostname = "sd111";
-              username = gnsn;
-              inherit inputs outputs;
-            };
-          };
-
-          "tesla.${gnsn}" = HomeConfiguration {
-            extraSpecialArgs = {
-              org = "sd";
-              role = "server";
-              hostname = "tesla";
-              username = gnsn;
-              inherit inputs outputs;
-            };
-          };
-
-          ###
-
-          "lambda-quad.${handle}" = HomeConfiguration {
-            extraSpecialArgs = {
-              org = "sr";
-              role = "server";
-              hostname = "lamda-quad";
-              username = handle;
+              networkInterface = "wlp2s0";
               inherit inputs outputs;
             };
           };
